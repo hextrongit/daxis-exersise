@@ -60,7 +60,7 @@ function FormExample() {
 
     setValidated(true);
 
-    navigate("/login")
+    navigate("/auth/login")
   };
 
   return (

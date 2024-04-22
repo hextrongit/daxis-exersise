@@ -61,7 +61,6 @@ function Login() {
         navigate("/home");
       } else {
         showToast("Invalid username or password", "warn");
-
         updateLoginStatus(false);
       }
     } else {
