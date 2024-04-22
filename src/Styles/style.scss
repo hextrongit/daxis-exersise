@@ -16,13 +16,27 @@
 }
 
 .nav-link {
-    border: 1px solid gray
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    border-radius: 0px !important;
+    color: black;
+    background-color: #f1f1f1;
+
+    &:hover {
+        background-color: #6C757D;
+        color: white;
+    }
+
+    &.active {
+        background-color: #6C757D !important;
+    }
 }
 
 .sideBar-div {
     width: 200px;
     min-height: 100vh;
     background-color: gray;
+    border-right: 1px solid gray;
     position: absolute;
     left: 0;
     top: 0;
@@ -51,7 +65,7 @@
 .dashBoard-container {
     .heading {
         border-bottom: 1px solid gray;
-        background-color: aliceblue;
+        background-color: #F8F9FA;
         margin: 0 !important;
     }
 }
@@ -64,4 +78,13 @@
 .icons {
     width: 18px;
     height: 18px;
+}
+
+.images-div {
+    display: flex;
+    gap: 20px;
+}
+
+.main-heading {
+    font-weight: 600;
 }

@@ -4,10 +4,11 @@ import Table from "react-bootstrap/Table";
 import { BsFillInfoCircleFill } from "react-icons/bs";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 function Products() {
+  const navigate = useNavigate()
   const { loading, allProducts, fetchAllProducts } = useContext(DataContext);
   const [productList, setProductList] = useState([]);
-  console.log("productList", productList);
 
   useEffect(() => {
     fetchAllProducts();
@@ -16,6 +17,10 @@ function Products() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [allProducts[0]?.id]);
+
+  const handleProduct = (product) => {
+    navigate(`/home/productDetails/${product.id}`);
+  };
 
   return (
     <div className="dashBoard-container">
@@ -47,8 +52,8 @@ function Products() {
                     <td>{product.brand}</td>
                     <td>{product.category}</td>
                     <td>{product.description}</td>
-                    <td>{product.price}</td>
-                    <td><BsFillInfoCircleFill className="icons"/></td>
+                    <td>{product.price}/-</td>
+                    <td><BsFillInfoCircleFill className="icons" onClick={()=> {handleProduct(product)}}/></td>
                     <td><FaEdit className="icons"/></td>
                     <td><MdDelete className="icons"/></td>
                   </tr>
