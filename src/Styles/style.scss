@@ -1,0 +1,67 @@
+// Import all of Bootstrap's CSS
+@import "bootstrap/scss/bootstrap";
+
+.register-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-div {
+    border: 1px solid gray;
+    width: 70%;
+    padding: 20px;
+}
+
+.nav-link {
+    border: 1px solid gray
+}
+
+.sideBar-div {
+    width: 200px;
+    min-height: 100vh;
+    background-color: gray;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.main-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.outlet-container {
+    position: absolute;
+    width: calc(100% - 200px);
+    height: 100vh;
+    right: 0;
+    top: 0;
+}
+
+.dashBoard-container {
+    .heading {
+        border-bottom: 1px solid gray;
+        background-color: aliceblue;
+        margin: 0 !important;
+    }
+}
+
+.container-div {
+    height: calc(100vh - 41px);
+    overflow: auto;
+}
+
+.icons {
+    width: 18px;
+    height: 18px;
+}
