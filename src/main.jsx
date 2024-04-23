@@ -27,6 +27,7 @@ const router = createBrowserRouter([
           { path: "productDetails/:id", element: <ProductDetails /> },
           { path: "profile", element: <Profile /> },
         ],
+        errorElement: <ErrorPage />,
       },
       {
         path: "/auth",
@@ -35,6 +36,7 @@ const router = createBrowserRouter([
           { path: "login", element: <Login /> },
           { path: "register", element: <Register /> },
         ],
+        errorElement: <ErrorPage />,
       },
     ],
   },
