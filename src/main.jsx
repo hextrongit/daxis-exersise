@@ -9,8 +9,9 @@ import Login from "./Pages/Login.jsx";
 import Register from "./Pages/Register.jsx";
 import ProductDetails from "./Pages/ProductDetails.jsx";
 import Dashboard from "./Pages/Dashboard.jsx";
-import Products from "./Pages/Products.jsx";
 import Profile from "./Pages/Profile.jsx";
+import OffcanvasComponent from "./Components/OffCanvas.jsx";
+import ProductRouter from "./Routers/ProductRouter.jsx";
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,14 @@ const router = createBrowserRouter([
         element: <AppRouter />,
         children: [
           { index: true, element: <Dashboard /> },
-          { path: "products", element: <Products /> },
+          {
+            path: "products",
+            element: <ProductRouter />,
+            children: [
+              { path: "create", element: <OffcanvasComponent placement={"end"}/> },
+              { path: "edit/:id", element: <OffcanvasComponent placement={"end"}/> },
+            ],
+          },
           { path: "productDetails/:id", element: <ProductDetails /> },
           { path: "profile", element: <Profile /> },
         ],
