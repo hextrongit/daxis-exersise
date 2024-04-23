@@ -35,7 +35,7 @@ function Login() {
 
   useEffect(() => {
     if (isLogin) {
-      navigate("/home");
+      navigate("/");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -50,22 +50,26 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const user = users.find((user) => user.userName === loginData.username);
+    if (users) {
+      const user = users.find((user) => user.userName === loginData.username);
+      if (users && user) {
+        if (user.password === loginData.password) {
+          showToast("login success full", "success");
 
-    if (user) {
-      if (user.password === loginData.password) {
-        showToast("login success full", "success");
-
-        updateLoginStatus(true);
-        localStorage.setItem("isLogin", true);
-        navigate("/home");
+          updateLoginStatus(true);
+          localStorage.setItem("isLogin", true);
+          navigate("/");
+        } else {
+          showToast("Invalid username or password", "warn");
+          updateLoginStatus(false);
+        }
       } else {
-        showToast("Invalid username or password", "warn");
         updateLoginStatus(false);
+        showToast("User not found", "warn");
       }
     } else {
       updateLoginStatus(false);
-      showToast("User not found", "warn");
+      showToast("No users found", "warn");
     }
   };
 

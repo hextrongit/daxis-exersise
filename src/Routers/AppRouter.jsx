@@ -7,6 +7,7 @@ const AppRouter = () => {
   const { loginStatus } = useContext(LoginContext);
   const isLogin = JSON.parse(localStorage.getItem("isLogin"));
   const navigate = useNavigate();
+  
   useEffect(() => {
     if (!isLogin && loginStatus.status) {
       navigate("/auth/login");

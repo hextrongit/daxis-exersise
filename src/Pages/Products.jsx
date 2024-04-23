@@ -19,13 +19,15 @@ function Products() {
   }, [allProducts[0]?.id]);
 
   const handleProduct = (product) => {
-    navigate(`/home/productDetails/${product.id}`);
+    navigate(`/productDetails/${product.id}`);
   };
 
   return (
     <div className="dashBoard-container">
       <h5 className="heading p-2">Products</h5>
       <div className="container-div p-2">
+
+        
         {loading ? (
           <p>Loading...</p>
         ) : (
