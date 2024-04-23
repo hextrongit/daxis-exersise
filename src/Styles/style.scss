@@ -88,3 +88,12 @@
 .main-heading {
     font-weight: 600;
 }
+
+.header-container {
+    border: 1px solid gray;
+    width: 100%;
+
+    button {
+        text-transform: capitalize;
+    }
+}
